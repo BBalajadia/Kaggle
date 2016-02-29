@@ -1,8 +1,8 @@
 #################################################
-# Bryan R. Balajadia - 30 September 2015
+# Bryan R. Balajadia - 29 February 2016
 # Titanic: Machine Learning from Disaster
 # Method: Conditional Random Forest in R
-# Submission result: 0.82297 (rank 39th/3368)
+# Submission result: 0.82775 (rank 38th/3575)
 #################################################
 
 Data & Description: https://www.kaggle.com/c/titanic
@@ -72,7 +72,7 @@ test <- all[892:1309,]
 ## Conditional Random Forest Model
 library(party)
 set.seed(1992) # RANDOM Forest!
-fit <- cforest(as.factor(Survived) ~ Pclass + Sex + Fare + Embarked + Title + FamilySize + FamilyID, data=train, controls=cforest_unbiased(ntree=1501, mtry=3))
+fit <- cforest(as.factor(Survived) ~ Pclass + Sex + Fare + Embarked + Title + FamilySize + FamilyID, data=train, controls=cforest_unbiased(ntree=10000, mtry=2))
 pred <- predict(fit, OOB=TRUE, test, type = "response")
 
 
@@ -86,4 +86,4 @@ my_submission <- data.frame(PassengerId = test$PassengerId, Survived = pred)
 write.csv(my_submission, file = "my_submission.csv", row.names = FALSE)
 
 
-# Congrats! You're now in the top 1.16% of submissions!
+# Congrats! You're now in the top 1% of submissions!
