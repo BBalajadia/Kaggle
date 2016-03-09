@@ -5,6 +5,8 @@
 # Submission result: 0.839319 (248th/805)
 #################################################
 
+Data & Description: https://www.kaggle.com/c/santander-customer-satisfaction
+
 # Set the working directory
 setwd("C:/Users/136241/Desktop/KAGGLE/Santander")
 
