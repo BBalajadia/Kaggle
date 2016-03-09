@@ -69,7 +69,7 @@ train <- sparse.model.matrix(TARGET ~ ., data=train) # ignore 'TARGET'
 ## xgb.train takes an xgb.DMatrix as the input.
 dtrain <- xgb.DMatrix(data=train, label = train.y)
 
-## For validation set monitoring duting training
+## For validation set monitoring during training
 watchlist <- list(train = dtrain)
 
 param <- list (booster = "gbtree", # general parameter: treebased
